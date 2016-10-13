@@ -13,5 +13,6 @@ img {
 }
 
 .app {
-  background-image: image('../images/battlefield.jpg');
+  background-image: url('../images/battlefield.jpg');
+  width: 100%;
 }
