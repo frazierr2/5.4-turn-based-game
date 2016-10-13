@@ -1,17 +1,26 @@
 var $ = require('jquery');
 
-function Character(){
-
+function Character(config){
+  config = config || {};
+  $.extend(this, config);
+  this.health = 100;
+  this.damage = 5;
 }
 
-function Heroes(){
-
+function Heroes(config){
+  Character.call(this, config);
 }
 
 Heroes.prototype = new Character();
 
-function Dragons(){
-
+function Dragons(config){
+  Character.call(this, config);
 }
 
 Dragons.prototype = new Character();
+
+module.exports = {
+  Character: Character,
+  Heroes: Heroes,
+  Dragons: Dragons
+};
