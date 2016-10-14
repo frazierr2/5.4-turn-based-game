@@ -25,21 +25,32 @@ img {
 
   h1 {
     font-size: 4vw;
+    clear: both;
   }
 
   h3 {
     font-size: 2.5vw;
   }
+
+  #restart {
+    font-size: 30px;
+    height: 50px;
+    width: 200px;
+    background-color: #337AB7;
+    float: right;
+    clear: both;
+  }
 }
 
 .img-block {
   height: 880px;
+
   h3 {
     color: white;
   }
 }
 
-img[src*="images/dragon3.png"]{
+img[src*="images/dragon3.png"] {
   margin-top: -125px;
 }
 

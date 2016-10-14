@@ -4,7 +4,7 @@ var models = require('./models');
 var gameTemplate = require('../templates/gameTemplate.hbs');
 var testTemp = require('../templates/testTemplate.hbs');
 
-console.log(models);
+// console.log(models);
 
 $(function() {
 
@@ -39,8 +39,8 @@ $(function() {
   ];
 
   var randomDragon = Math.floor(Math.random() * dragons.length);
-  console.log(randomDragon);
-  console.log(dragons[randomDragon]);
+  // console.log(randomDragon);
+  // console.log(dragons[randomDragon]);
 
   // var context = {
   //   'characters': heroes,
@@ -67,7 +67,7 @@ $(function() {
     mySelection = _.filter(heroes, {
       'name': selectedHero
     })[0];
-    console.log('selected', mySelection);
+    // console.log('selected', mySelection);
     $heroeSelector.hide(1500, function() {
       $('.js-hero').html(testTemp(mySelection)).show(function() {
         $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
@@ -76,11 +76,14 @@ $(function() {
   })
 
   // RESTART THE GAME
-  // var reset = document.getElementById("#restart");
-  // reset.addEventListener("click", resetGame);
-  //
-  // function resetGame() {
-  //   window.location.reload()
-  // }
+
+
+  var reset = document.getElementById("restart");
+  reset.addEventListener("click", resetGame);
+
+  function resetGame() {
+    window.location.reload();
+  }
+
 
 });
