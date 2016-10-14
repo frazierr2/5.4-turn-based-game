@@ -37,15 +37,21 @@ $(function() {
     })
   ];
 
+
+
   var context = {
-    'heroes': heroes
-  }
-  var evil = {
-    'dragons': dragons
-  }
+    'characters': heroes,
+    'type': 'hero'
+  };
 
   $('.js-hero').html(gameTemplate(context));
-  $('.js-dragon').html(gameTemplate(evil));
+
+  var context = {
+    'characters': dragons,
+    'type': 'dragon'
+  };
+
+  $('.js-dragon').html(gameTemplate(context));
 
   // console.log(heroes);
   // console.log(dragons);
