@@ -42,21 +42,21 @@ $(function() {
   console.log(randomDragon);
   console.log(dragons[randomDragon]);
 
-  var context = {
-    'characters': heroes,
-    'type': 'hero'
-  };
-
-  $('.js-hero').html(gameTemplate(context));
-  $('.js-hero').hide();
-
-  var context = {
-    'characters': dragons,
-    'type': 'dragon'
-  };
-
-  $('.js-dragon').html(gameTemplate(context));
-  $('.js-dragon').hide();
+  // var context = {
+  //   'characters': heroes,
+  //   'type': 'hero'
+  // };
+  //
+  // $('.js-hero').html(gameTemplate(context));
+  // $('.js-hero').hide();
+  //
+  // var context = {
+  //   'characters': dragons,
+  //   'type': 'dragon'
+  // };
+  //
+  // $('.js-dragon').html(gameTemplate(context));
+  // $('.js-dragon').hide();
 
   var mySelection;
 
@@ -76,11 +76,11 @@ $(function() {
   })
 
   // RESTART THE GAME
-  var reset = document.getElementById("#restart");
-  reset.addEventListener("click", resetGame);
-
-  function resetGame() {
-    window.location.reload()
-  }
+  // var reset = document.getElementById("#restart");
+  // reset.addEventListener("click", resetGame);
+  //
+  // function resetGame() {
+  //   window.location.reload()
+  // }
 
 });
