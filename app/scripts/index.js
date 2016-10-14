@@ -23,13 +23,6 @@ $(function() {
     })
   ];
 
-  // var mySelectionTwo = heroes.filter(function(hero){
-  //   return hero.name === 'Knight'
-  // })
-  //
-  // console.log(mySelectionTwo);
-
-
   var dragons = [
     new models.Dragons({
       name: 'Drogon',
@@ -79,23 +72,8 @@ $(function() {
       $('.js-hero').html(testTemp(mySelection)).show(function() {
         $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
       });
-
     });
   })
-
-  // if button value = 'knight' then filter the array to only include the knight
-
-  // console.log(heroes);
-  // console.log(dragons);
-
-  // var clickValue = 'Archer'
-  //
-  // var mySelection = _.filter(heroes, function(hero){
-  //   return hero.name === clickValue
-  // })
-  //
-  // $('.js-hero').html(gameTemplate(heroes[0]));
-  //
 
   // RESTART THE GAME
   var reset = document.getElementById("#restart");
@@ -104,8 +82,5 @@ $(function() {
   function resetGame() {
     window.location.reload()
   }
-
-
-
 
 });
