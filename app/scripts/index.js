@@ -18,7 +18,7 @@ $(function() {
       image: 'images/Archer.png'
     }),
     new models.Heroes({
-      name: 'Wizzard',
+      name: 'Wizard',
       image: 'images/Wizzard .png'
     })
   ];
