@@ -10,34 +10,42 @@ $(function() {
   var heroes = [
     new models.Heroes({
       name: 'Knight',
-      image: '../images/Knight.png'
+      image: 'images/Knight.png'
     }),
     new models.Heroes({
       name: 'Archer',
-      image: '../images/Archer.png'
+      image: 'images/Archer.png'
     }),
     new models.Heroes({
       name: 'Wizzard',
-      image: '../images/Wizzard.png'
+      image: 'images/Wizzard .png'
     })
   ];
 
   var dragons = [
     new models.Dragons({
       name: 'Drogon',
-      image: '../images/dragon1.png'
+      image: 'images/dragon1.png'
     }),
     new models.Dragons({
       name: 'Rhaegal',
-      image: '../images/dragon2.png'
+      image: 'images/dragon2.png'
     }),
     new models.Dragons({
       name: 'Viserion',
-      image: '../images/dragon3.png'
+      image: 'images/dragon3.png'
     })
   ];
 
-  console.log(heroes);
-  console.log(dragons);
+  var context = {
+    'heroes': heroes,
+    'dragons': dragons
+  }
+
+  $('.js-hero').html(gameTemplate(context));
+  $('.js-dragon').html(gameTemplate(context));
+
+  // console.log(heroes);
+  // console.log(dragons);
 
 });
