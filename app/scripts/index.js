@@ -76,8 +76,6 @@ $(function() {
   })
 
   // RESTART THE GAME
-
-
   var reset = document.getElementById("restart");
   reset.addEventListener("click", resetGame);
 
