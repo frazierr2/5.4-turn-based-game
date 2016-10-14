@@ -38,3 +38,12 @@ img {
     color: white;
   }
 }
+
+img[src*="images/dragon3.png"]{
+  margin-top: -125px;
+}
+
+.test-temp {
+  overflow: hidden;
+  height: 650px;
+}
