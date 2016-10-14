@@ -23,11 +23,11 @@ $(function() {
     })
   ];
 
-// var mySelectionTwo = heroes.filter(function(hero){
-//   return hero.name === 'Knight'
-// })
-//
-// console.log(mySelectionTwo);
+  // var mySelectionTwo = heroes.filter(function(hero){
+  //   return hero.name === 'Knight'
+  // })
+  //
+  // console.log(mySelectionTwo);
 
 
   var dragons = [
@@ -67,13 +67,15 @@ $(function() {
 
   var mySelection;
 
-  $('button').on('click', function(){
+  $('button').on('click', function() {
     var $heroeSelector = $('.hero-selector');
     var clickValue = $(this);
     var selectedHero = clickValue.data('hero-name');
-    mySelection = _.filter(heroes, {'name': selectedHero})[0];
+    mySelection = _.filter(heroes, {
+      'name': selectedHero
+    })[0];
     console.log('selected', mySelection);
-    $heroeSelector.hide(1500, function(){
+    $heroeSelector.hide(1500, function() {
       $('.js-hero').html(testTemp(mySelection)).show(function() {
         $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
       });
@@ -94,5 +96,16 @@ $(function() {
   //
   // $('.js-hero').html(gameTemplate(heroes[0]));
   //
+
+  // RESTART THE GAME
+  var reset = document.getElementById("#restart");
+  reset.addEventListener("click", resetGame);
+
+  function resetGame() {
+    window.location.reload()
+  }
+
+
+
 
 });
