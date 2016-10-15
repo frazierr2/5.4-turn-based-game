@@ -84,25 +84,28 @@ $(function() {
       $('.js-attack').html(attackButton).show();
       $('.js-hero').html(testTemp(mySelection)).show(function() {
         $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
-
-        //console.log(mySelection.attack(dragons[randomDragon]));
-        // mySelection.attack(dragons[randomDragon]);
-        // mySelection.attack(dragons[randomDragon]);
       });
     });
   })
 
+  //************** ATTACKING EACH PLAYER**************
   $('.js-attack').on('click', function(event) {
     event.preventDefault();
     mySelection.attack(dragons[randomDragon]);
     $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
-
+    $('.js-hero').animate({
+      "left": "+=50px"
+    }, "fast").animate({
+      "left": "-=50px"
+    }, "fast");
     window.setTimeout(function() {
       dragons[randomDragon].attack(mySelection);
       $('.js-hero').html(testTemp(mySelection)).show();
-
-      // console.log(mySelection);
-      // console.log(dragons[randomDragon].health);
+      $('.js-dragon').animate({
+        "right": "+=50px"
+      }, "fast").animate({
+        "right": "-=50px"
+      }, "fast");
       if (mySelection.health <= 0 && dragons[randomDragon].health >= 0) {
         $('.js-dragon').html(loseTemp());
       } else if (mySelection.health >= 0 && dragons[randomDragon].health <= 0) {
@@ -111,7 +114,6 @@ $(function() {
         $('.js-dragon').html(draw());
         $('.js-hero').html(draw());
       }
-
     }, 1000);
   })
 
