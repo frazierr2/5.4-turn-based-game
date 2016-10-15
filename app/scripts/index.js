@@ -94,17 +94,17 @@ $(function() {
     mySelection.attack(dragons[randomDragon]);
     $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
     $('.js-hero').animate({
-      "left": "+=50px"
+      "left": "+=350px"
     }, "fast").animate({
-      "left": "-=50px"
+      "left": "-=350px"
     }, "fast");
     window.setTimeout(function() {
       dragons[randomDragon].attack(mySelection);
       $('.js-hero').html(testTemp(mySelection)).show();
       $('.js-dragon').animate({
-        "right": "+=50px"
+        "right": "+=350px"
       }, "fast").animate({
-        "right": "-=50px"
+        "right": "-=350px"
       }, "fast");
       if (mySelection.health <= 0 && dragons[randomDragon].health >= 0) {
         $('.js-dragon').html(loseTemp());
