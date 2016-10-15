@@ -3,6 +3,7 @@ var _ = require('underscore');
 var models = require('./models');
 var gameTemplate = require('../templates/gameTemplate.hbs');
 var testTemp = require('../templates/testTemplate.hbs');
+var attackButton = require('../templates/attackButton.hbs');
 
 // console.log(models);
 
@@ -69,6 +70,7 @@ $(function() {
     })[0];
     // console.log('selected', mySelection);
     $heroeSelector.hide(1500, function() {
+      $('.js-attack').html(attackButton).show()
       $('.js-hero').html(testTemp(mySelection)).show(function() {
         $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
       });
