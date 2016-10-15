@@ -8,6 +8,11 @@ function Character(config) {
   this.damage = 5;
 }
 
+Character.prototype.attack = function(enemy){
+  console.log('ATTACK');
+  console.log(enemy);
+};
+
 function Heroes(config) {
   Character.call(this, config);
 

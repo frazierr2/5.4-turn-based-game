@@ -73,6 +73,15 @@ $(function() {
       $('.js-attack').html(attackButton).show()
       $('.js-hero').html(testTemp(mySelection)).show(function() {
         $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
+
+        //console.log(mySelection.attack(dragons[randomDragon]));
+        mySelection.attack(dragons[randomDragon]);
+        console.log('hero health:', mySelection.health);
+        console.log('dragon health:', dragons[randomDragon].health);
+        console.log('dragon health:', dragons[randomDragon].health = dragons[randomDragon].health - mySelection.damage);
+        console.log('hero health:', mySelection.health = mySelection.health - dragons[randomDragon].damage);
+        console.log('hero health:', mySelection.health = mySelection.health - dragons[randomDragon].damage);
+        console.log('hero healt:', mySelection.health = mySelection.health - dragons[randomDragon].damage);
       });
     });
   })
@@ -80,6 +89,7 @@ $(function() {
   // RESTART THE GAME
   var reset = document.getElementById("restart");
   reset.addEventListener("click", resetGame);
+  console.log(reset);
 
   function resetGame() {
     window.location.reload();
