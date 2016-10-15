@@ -5,11 +5,13 @@ var gameTemplate = require('../templates/gameTemplate.hbs');
 var testTemp = require('../templates/testTemplate.hbs');
 var loseTemp = require('../templates/loseTemp.hbs');
 var winTemp = require('../templates/winTemp.hbs');
+var draw = require('../templates/draw.hbs');
 var attackButton = require('../templates/attackButton.hbs');
 
 // console.log(models);
 
 $(function() {
+
 
   var arr = _.range(100);
 
@@ -64,24 +66,9 @@ $(function() {
   ];
 
   var randomDragon = Math.floor(Math.random() * dragons.length);
-  // console.log(randomDragon);
-  // console.log(dragons[randomDragon]);
+  // var currentDragon = dragons[randomDragon];
+  // console.log(dragons[randomDragon].health);
 
-  // var context = {
-  //   'characters': heroes,
-  //   'type': 'hero'
-  // };
-  //
-  // $('.js-hero').html(gameTemplate(context));
-  // $('.js-hero').hide();
-  //
-  // var context = {
-  //   'characters': dragons,
-  //   'type': 'dragon'
-  // };
-  //
-  // $('.js-dragon').html(gameTemplate(context));
-  // $('.js-dragon').hide();
 
   var mySelection;
 
@@ -105,32 +92,27 @@ $(function() {
     });
   })
 
-  $('.js-attack').on('click', function(event){
+  $('.js-attack').on('click', function(event) {
     event.preventDefault();
     mySelection.attack(dragons[randomDragon]);
     $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
 
-    window.setTimeout(function(){
+    window.setTimeout(function() {
       dragons[randomDragon].attack(mySelection);
       $('.js-hero').html(testTemp(mySelection)).show();
 
-      console.log(mySelection.health);
-      if(mySelection.health <= 0){
-        $('.js-hero').html(loseTemp());
+      // console.log(mySelection);
+      // console.log(dragons[randomDragon].health);
+      if (mySelection.health <= 0 && dragons[randomDragon].health >= 0) {
+        $('.js-dragon').html(loseTemp());
+      } else if (mySelection.health >= 0 && dragons[randomDragon].health <= 0) {
         $('.js-dragon').html(winTemp());
+      } else if (mySelection.health <= 0 && dragons[randomDragon].health <= 0) {
+        $('.js-dragon').html(draw());
+        $('.js-hero').html(draw());
       }
 
-      var currentDragon = dragons[randomDragon.health];
-
-      console.log();
-
-      // if(dragons[randomDragon].health <= 0){
-      //   $('js-dragon').html(lostTemp());
-      // }
-
-
-      //console.log(mySelection.health);
-    }, 2000);
+    }, 1000);
   })
 
 

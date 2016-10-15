@@ -8,7 +8,7 @@ function Character(config) {
   // this.damage = 5;
 }
 
-Character.prototype.attack = function(enemy){
+Character.prototype.attack = function(enemy) {
   enemy.health -= this.damage;
   //console.log(enemy.health);
   // this.health = this.health - enemy.damage;
