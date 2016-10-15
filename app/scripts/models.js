@@ -4,15 +4,16 @@ var $ = require('jquery');
 function Character(config) {
   config = config || {};
   $.extend(this, config);
-  this.health = 100;
-  this.damage = 5;
+  // this.health = 100;
+  // this.damage = 5;
 }
 
 Character.prototype.attack = function(enemy){
-  enemy.health = enemy.health - this.damage;
-  this.health = this.health - enemy.damage;
-  console.log(enemy.health);
-  console.log(this.health);
+  enemy.health -= this.damage;
+  //console.log(enemy.health);
+  // this.health = this.health - enemy.damage;
+  // console.log(enemy.health);
+  // console.log(this.health);
   //$('health-bar').textContent = enemy.health;
 };
 
