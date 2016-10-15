@@ -13,6 +13,7 @@ Character.prototype.attack = function(enemy){
   this.health = this.health - enemy.damage;
   console.log(enemy.health);
   console.log(this.health);
+  //$('health-bar').textContent = enemy.health;
 };
 
 function Heroes(config) {
