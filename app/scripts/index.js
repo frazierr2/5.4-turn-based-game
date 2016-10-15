@@ -94,7 +94,7 @@ $(function() {
     })[0];
     // console.log('selected', mySelection);
     $heroeSelector.hide(1500, function() {
-      $('.js-attack').html(attackButton).show()
+      $('.js-attack').html(attackButton).show();
       $('.js-hero').html(testTemp(mySelection)).show(function() {
         $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
 
