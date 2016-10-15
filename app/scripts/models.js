@@ -9,8 +9,10 @@ function Character(config) {
 }
 
 Character.prototype.attack = function(enemy){
-  console.log('ATTACK');
-  console.log(enemy);
+  enemy.health = enemy.health - this.damage;
+  this.health = this.health - enemy.damage;
+  console.log(enemy.health);
+  console.log(this.health);
 };
 
 function Heroes(config) {

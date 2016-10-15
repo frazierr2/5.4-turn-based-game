@@ -76,12 +76,6 @@ $(function() {
 
         //console.log(mySelection.attack(dragons[randomDragon]));
         mySelection.attack(dragons[randomDragon]);
-        console.log('hero health:', mySelection.health);
-        console.log('dragon health:', dragons[randomDragon].health);
-        console.log('dragon health:', dragons[randomDragon].health = dragons[randomDragon].health - mySelection.damage);
-        console.log('hero health:', mySelection.health = mySelection.health - dragons[randomDragon].damage);
-        console.log('hero health:', mySelection.health = mySelection.health - dragons[randomDragon].damage);
-        console.log('hero healt:', mySelection.health = mySelection.health - dragons[randomDragon].damage);
       });
     });
   })
