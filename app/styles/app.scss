@@ -48,6 +48,9 @@ img {
 
   h3 {
     color: white;
+    text-decoration: underline;
+    font-size: 25px;
+    text-transform: uppercase;
   }
 }
 
@@ -67,4 +70,22 @@ img[src*="images/dragon3.png"] {
   background-color: red;
   color: white;
   border-radius: 10px;
+}
+
+#btn-knight {
+  background-color: red;
+}
+
+#btn-archer {
+  background-color: white;
+  color: blue;
+}
+
+#btn-wizard {
+  background-color: navy;
+}
+
+.btn-block {
+  font-size: 30px;
+  letter-spacing: 15px;
 }
