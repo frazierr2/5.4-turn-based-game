@@ -12,7 +12,6 @@ var attackButton = require('../templates/attackButton.hbs');
 
 $(function() {
 
-
   var arr = _.range(100);
 
   var randomDamage = Math.floor(Math.random() * arr.length);
@@ -22,7 +21,7 @@ $(function() {
     win: 'You win',
     lose: 'You lose'
   };
-
+  // ***********CREATING CHARACTERS**************
   var heroes = [
     new models.Heroes({
       name: 'Knight',
@@ -64,12 +63,12 @@ $(function() {
       damage: randomDamage2
     })
   ];
-
+  // ***************SELECTING RANDOM DRAGON***************
   var randomDragon = Math.floor(Math.random() * dragons.length);
   // var currentDragon = dragons[randomDragon];
   // console.log(dragons[randomDragon].health);
 
-
+  // *********SELECTING CHARACTER AND DRAGON************
   var mySelection;
 
   $('button').on('click', function() {
@@ -80,6 +79,7 @@ $(function() {
       'name': selectedHero
     })[0];
     // console.log('selected', mySelection);
+
     $heroeSelector.hide(1500, function() {
       $('.js-attack').html(attackButton).show();
       $('.js-hero').html(testTemp(mySelection)).show(function() {
@@ -95,9 +95,9 @@ $(function() {
     $('.js-dragon').html(testTemp(dragons[randomDragon])).show();
     $('.js-hero').animate({
       "left": "+=350px"
-    }, "fast").animate({
+    }, "slow").animate({
       "left": "-=350px"
-    }, "fast");
+    }, "slow");
     window.setTimeout(function() {
       dragons[randomDragon].attack(mySelection);
       $('.js-hero').html(testTemp(mySelection)).show();
@@ -116,6 +116,8 @@ $(function() {
       }
     }, 1000);
   })
+
+
 
 
   // RESTART THE GAME
