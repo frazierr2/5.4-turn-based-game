@@ -11,7 +11,7 @@ var attackButton = require('../templates/attackButton.hbs');
 // console.log(models);
 
 $(function() {
-
+  $('#music').get(0).play();
   var arr = _.range(100);
 
   var randomDamage = Math.floor(Math.random() * arr.length);
